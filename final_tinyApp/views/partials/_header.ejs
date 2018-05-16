@@ -1,0 +1,16 @@
+<title>TinyApp</title>
+<div>
+  <% if(user !== undefined) {%>
+    <div>
+      <%=user.email%>
+      <form style="display: inline;" action="/logout" method="POST">
+        <input type="submit" value="Logout">
+      </form>
+    </div>
+  <% } else {%>
+    <div>
+      <a href="/login">Login</a>
+      <a href="/register">register</a>
+    </div>
+  <% } %>
+<div>

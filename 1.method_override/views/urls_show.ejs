@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/_header %>
+</head>
+<body>
+  <form action="/urls/<%=shortURL%>?_method=PUT" method="POST">
+    <h2>shortURL: <%=shortURL%></h2>
+    <input type="text" name="updatedURL" value="<%= urlDatabase[shortURL].long_URL %>">
+    <input type="submit" value="Update">
+  </form>
+  <div>
+    <p><%=urlDatabase[shortURL].visits%> total visitors with <%=urlDatabase[shortURL].unique_visits.length%> unique visitors</p>
+  </div>
+  <div>
+    <% urlDatabase[shortURL].visitors_list.forEach(function(visitor){ %>
+      <p><%=visitor%></p>
+    <% }) %>
+  </div>
+</body>
+</html>
