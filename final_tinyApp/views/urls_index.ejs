@@ -7,8 +7,8 @@
   <% if(user !== undefined) {%>
     <% for(var url in urls){ %>
       <% if(urls[url].user_id === user.id){ %>
-        <li style="margin: 20px"><%= url %> ->
-          <a href="/u/<%=url%>"><%=urls[url].long_URL%></a>
+        <li style="margin: 20px"><a href="/u/<%=url%>"><%= url %></a> ->
+          <%=urls[url].long_URL%>
           created at <%= urls[url].date %>
           -- <%= urls[url].visits %> visits with
           <button><a href="/urls/<%=url%>">Edit</a></button>
